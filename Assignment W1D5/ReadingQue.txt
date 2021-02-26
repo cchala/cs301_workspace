@@ -1,0 +1,9 @@
+1. What are alternatives to default parameters?
+The alternative to default parameters is to give meaning full that means
+by giving zero to avoid the return value which is undefined or other string that gives meaning to 
+users depending on the function return type.
+
+2. What are things you should consider while naming a function?
+The function name should have to be related to the function that means that gives meaning to other users.
+and should have to related to the return type that means if it is a boolean, sum, etc
+The name should follow the camelcase agreement.
