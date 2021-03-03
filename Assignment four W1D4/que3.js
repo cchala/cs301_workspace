@@ -26,3 +26,17 @@ locked out.”`
      
     }
     
+    let count=0;
+    do{
+        pin=prompt("Enter your guss pin here")
+        count++;
+        if(pin===password){
+        console.log(`correct, welcom back`)
+             break;
+        }
+        console.log("Incorrect, try again")
+    }while(count!==3)
+    if(count===3){
+    console.log(`You have been locked out`)
+    }
+    
