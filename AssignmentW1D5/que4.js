@@ -4,8 +4,8 @@
 "use strict";
 /**
  * 
- * @param {number} num1; 
- * @param {number} num2;
+ * @param {number} num1 is a number input; 
+ * @param {number} num2 is a number input;
  * @return {number};
  */
 function getGHF1(num1,num2){
@@ -22,8 +22,8 @@ console.log(getGHF1(12,24));
 ////Short cut to find GCF
 /**
  * 
- * @param {number} number1; 
- * @param {number} number2;
+ * @param {number} number1 is a number input; 
+ * @param {number} number2 is a number input;
  * @return {number}; 
  */
 function getNewGCF(number1,number2){

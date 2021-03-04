@@ -8,8 +8,8 @@ Hint: search for relation between HCF and LCM.`*/
 //let prompt=require("prompt-sync")();
 /**
  * 
- * @param {number} num1 is input;
- * @param {number} num2 is input; 
+ * @param {number} num1 is a number input;
+ * @param {number} num2 is a number input; 
  * @return {number};
  */
 let getNewGCF= function(num1,num2){
@@ -28,8 +28,8 @@ let getNewGCF= function(num1,num2){
 //console.log(getNewGCF(3,4))
 /**
  * 
- * @param {number} num1; 
- * @param {number} num2;
+ * @param {number} num1 is a number input; 
+ * @param {number} num2 is a number input;
  * @return {number}; 
  */
 function getLCM(num1,num2){

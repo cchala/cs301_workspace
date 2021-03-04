@@ -8,9 +8,9 @@ o Refactor to pass add logic as an arrow function. (Make a copy first)`*/
 "use strict";
 /**
  * 
- * @param {function} add; 
- * @param {number} number1; 
- * @param {number} number2;
+ * @param {function} add is a function that add two numbers; 
+ * @param {number} number1 is a number input; 
+ * @param {number} number2 is a number input;
  * @return {function}; 
  */
 function compute(add,number1,number2){
@@ -19,8 +19,8 @@ function compute(add,number1,number2){
 }
 /**
  * 
- * @param {number} number1; 
- * @param {number} number2;
+ * @param {number} number1 is a number input; 
+ * @param {number} number2 is a number input;
  * @return {number}; 
  */
 function add(number1,number2){

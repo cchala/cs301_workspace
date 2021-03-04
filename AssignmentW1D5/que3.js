@@ -11,9 +11,9 @@
 // //living volume
 /**
  * 
- * @param {number} width; 
- * @param {number} height; 
- * @param {number} depth; 
+ * @param {number} width is the width of house; 
+ * @param {number} height is the height of house; 
+ * @param {number} depth is the depth of house; 
  * @return {number};
  */
 function livingVolume(width,height,depth){
@@ -23,9 +23,9 @@ function livingVolume(width,height,depth){
   //roofVolume
 /**
  * 
- * @param {number} width;
- * @param {number} sew1; 
- * @param {number} sew;
+ * @param {number} width is the width of house;
+ * @param {number} sew1 is the sweep of house; 
+ * @param {number} sew is the sweep of house;
  * @return {number}; 
  */
 function roofVolume(width,sew1,sew){
@@ -35,9 +35,9 @@ function roofVolume(width,sew1,sew){
 //area of triangle
 /**
  * 
- * @param {number} width; 
- * @param {number} sew1; 
- * @param {number} sew ;
+ * @param {number} width is the width of house; 
+ * @param {number} sew1 is the sweep of house; 
+ * @param {number} sew s the sweep of house;
  * @return {number};
  */
 function triangleArea(width,sew1,sew){
@@ -48,11 +48,11 @@ function triangleArea(width,sew1,sew){
 //console.log(triangleArea(2,3,4))//2,3,4
 /**
  * 
- * @param {number} width; 
- * @param {number} height; 
- * @param {number} depth; 
- * @param {number} sew1; 
- * @param {number} sew ;
+ * @param {number} width s the width of house; 
+ * @param {number} height is the height of house; 
+ * @param {number} depth is the depth of house; 
+ * @param {number} sew1 is the sweep of house; 
+ * @param {number} sew is the sweep of house;
  * @return {number};
  */
 function houseVolume(width,height,depth,sew1,sew){
