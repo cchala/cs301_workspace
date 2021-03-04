@@ -1,0 +1,26 @@
+{
+  "name": "cs301_workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "first_program.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-config-devansvd": "^0.4.0",
+    "jsdoc": "^3.6.6",
+    "mocha": "^8.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cchala/cs301_workspace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cchala/cs301_workspace/issues"
+  },
+  "homepage": "https://github.com/cchala/cs301_workspace#readme"
+}

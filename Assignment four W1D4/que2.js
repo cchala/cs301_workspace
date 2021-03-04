@@ -8,3 +8,5 @@ for(let i=factorialNum;i>=1;i--){
     product*=i;
 }
 console.log(`The product of a given number :${product}`);
+
+module.exports = {checkPrime, isOdd};
