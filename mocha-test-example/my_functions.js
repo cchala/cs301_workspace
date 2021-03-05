@@ -1,4 +1,4 @@
-
+"use strict";
 /**
  * 
  * @param {number} n number to be tested if prime
@@ -10,7 +10,6 @@ function checkPrime(n){
     }
     return true;
 }
-
 /**
  * 
  * @param {number} n number to be test if odd
