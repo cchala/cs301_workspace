@@ -21,7 +21,7 @@ function isArrayEqual(arr1, arr2){
 
 /**
  * 
- * @param {array} arr; 
+ * @param {array} arr is input that is number array; 
  * @returns {number} result of addition of first and last elements of the array 
  */
 function addends(arr){
@@ -31,8 +31,8 @@ function addends(arr){
 }
 /**
  * 
- * @param {number} array;
- * @return {number};
+ * @param {number} array the fuction takes number array;
+ * @return {number} returns the middle value depnding the array is even or odd length;
  */
 function getMiddle(array){
   let mid;
@@ -45,20 +45,18 @@ function getMiddle(array){
 }
 /**
  * 
- * @param {number} arr;
- * @return {number};
+ * @param {number} arr function takes array as input;
+ * @return {number} returns moving every elements to the left one time;
  */
 function rotateLeft(arr){
        
     arr.push(arr.shift());
        return arr;
 }  
-    let array3=[2,3,4,5,6,7,8];
-    //console.log(rotateLeft(array3));
 /**
  * 
- * @param {number} arr;
- * @return {number};
+ * @param {number} arr function takes array as input;
+ * @return {number} returns moving every elements to the right one time;
  */
 function rotateRight(arr){
   arr.unshift(arr.pop());
@@ -66,9 +64,9 @@ function rotateRight(arr){
   }
   /**
    * 
-   * @param {number} arr; 
-   * @param {number} numbMoves;
-   * @return {number};
+   * @param {number} arr function takes array as input; 
+   * @param {number} numbMoves the number of time the elements move to the right;
+   * @return {number} returns moving every elements to the right n time;
    */
 function rotateNRight(arr,numbMoves){
         for(let i=0; i<arr.length;i++){
@@ -82,29 +80,64 @@ function rotateNRight(arr,numbMoves){
     }
 /**
  * 
+ * @param {string} strgNumber input is any string number sparated by comma;
+ * @return {number} function return the number array that is converted from the string; 
+ */
+function numberInputWithComma(strgNumber){
+        let strgNumToArray=strgNumber.split(",");
+        let numArray=[];
+        for(let i=0;i<strgNumToArray.length;i++){
+          numArray.push(parseInt(strgNumToArray[i]));
+        }
+        return numArray;
+      }
+      
+      console.log(numberInputWithComma("12,34,-34,5,-7,9"));
+/**
+ * 
+ * @param {number} arr the array of number that have negative value too;
+ * @return {number} returns arr filter out all negative number found in array; 
+ */
+function filterNegativeNum(arr){
+        let nonNegativeNumber=[];
+        for(let i=0;i<arr.length;i++){
+          if(arr[i]>=0){
+            continue;
+          }
+          nonNegativeNumber.push(arr[i]);
+        }
+        return nonNegativeNumber;
+      }
+      
+ //     console.log(filterNegativeNum([ 12, 34, -34, 5, -7, 9 ]));  
+/**
+ * 
  * @param {number} arrayOne; 
  * @param {number} arrayTwo;
  * @return {number};
  */
- function sortedTwoArrayIn2One(arrayOne,arrayTwo){
-     let newLength=arrayOne.length+arrayTwo.length-1;
-     let newArray=[];
-     for(let i=0;i<newLength;i++){
-         if(arrayOne[i]<arrayTwo[i]){
-             newArray.push(arrayOne.shift());
-             //newArray.push(arrayTwo.shift());
-         }else if(arrayTwo[i]<arrayOne[i]){
-            newArray.push(arrayTwo.shift());
-            //newArray.push(arrayOne.shift());
-         }else{
-             newArray.push(arrayOne.shift()||arrayTwo.shift());
-         }
-     }
-     return newArray;
- }
- let arr=[1,2,4,5,8];
- let ar2=[3,6,7,9];
- console.log(sortedTwoArrayIn2One(arr,ar2));
+function sortedTwoArrayIn2One(arrayOne,arrayTwo){
+    let newLength=arrayOne.length+arrayTwo.length;
+    let newArray=[];
+    let isEmptyOne=arrayOne.length>=0;
+    let isEmptyTwo=arrayOne.length>=0;
+    for(let i=0;i<newLength;i++){
+       
+      if((isEmptyOne&&isEmptyTwo) &&((arrayOne[0]<=arrayTwo[0]))){
+            newArray.push(arrayOne.shift());
+            
+        }else if(isEmptyTwo &&((arrayOne[0]>=arrayTwo[0]))) {
+           newArray.push(arrayTwo.shift());
+         
+        }else{
+          newArray.push(arrayTwo.shift()||arrayOne.shift());}
+        
+      }
+    return newArray;
+  }
+  let arr=[1,2,4,5,8,30,40];
+  let ar2=[3,6,7,9,10,30];
+  console.log(sortedTwoArrayIn2One(arr,ar2));
  /**
   * 
   * @param {string} arr;
@@ -161,19 +194,18 @@ function filterPalindromes(arr){
       let ArLn=arr.length;
       let count=0;
       for(let i=0;i<ArLn;i++){
-        
         for(let j=0;j<arr[i].length;j++){
           if(arr[i].charAt(j)===arr[i].charAt((arr[i].length-1)-j)){
-                newArr[count]=arr[i];
-                count++;
+                newArr[count]=arr[i];  
           }
+        
         }
-       
+        count++;
       }
       return newArr;
     }
     
     let arry=["a", "kayak", "racecar"];
-    console.log(filterPalindromes(arry))
+    console.log(filterPalindromes(arry));
     
-module.exports= {isArrayEqual, addends,rotateLeft,rotateRight,rotateNRight,sortedTwoArrayIn2One,};
+module.exports= {isArrayEqual, addends,getMiddle,rotateLeft,rotateRight,rotateNRight,filterNegativeNum,sortedTwoArrayIn2One,};
