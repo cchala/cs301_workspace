@@ -84,27 +84,30 @@ function rotateNRight(arr,numbMoves){
  * @return {boolean}; 
  */
 function isBalance(arr1){
-      let stack=[];
-      let len=stack.length-1;
-     if(arr1.length%2!==0)return false;
-  for(let i=0;i<arr1.length;i++){
-          if(arr1[i]==="{"||arr1[i]==="["||arr1[i]==="("){
-              stack.push(arr1[i]);
-          }else if(stack [len]==="{"&&arr1[i]==="}"){
-              stack.pop();
-          }else if(stack [len]==="["&&arr1[i]==="]"){
-              stack.pop();
-          }else if(stack [len]==="("&&arr1[i]===")"){
-              stack.pop();
-          }
+ 
+  let stack=[];
+  let matched="["&&"]"||"{"&&"}"||"("&&")";
+ if(arr1.length%2!==0)return false;
+for(let i=0;i<arr1.length;i++){
+      if(arr1[i]==="{"||arr1[i]==="["||arr1[i]==="("){
+          stack.push(arr1[i]);
+      }else if(stack [stack.length-1]&&"}"===matched){
+          stack.pop();
+      }else if(stack [stack.length-1]&&"]"===matched){
+          stack.pop();
+      }else if(stack [stack.length-1]&&")"===matched){
+          stack.pop();
       }
-      if(stack.length===0){
-          return true;
-      }
-      return false;
   }
-  let exp = [")","(", ")", "[", "{", "}", "]"]; 
-  console.log(isBalance(exp));   
+  if(stack.length===0){
+      return true;
+  }else{
+    return false;
+  }
+ 
+}
+let exp = ["(", ")", "[", "{", "}", "]"]; 
+console.log(isBalance(exp));
 /**
  * 
  * @param {string} strgNumber input is any string number sparated by comma;
@@ -223,28 +226,59 @@ let arrr=[0, 100, 3, 6, -555];
 console.log(filterRange(arrr,6,120));
 /**
  * 
- * @param {string} arr;
- * @return {string}; 
+ * @param {array} arr;
+ * @return {arr}; 
  */
 function filterPalindromes(arr){
-      const newArr=[];
-      let ArLn=arr.length;
-      let count=0;
-      for(let i=0;i<ArLn;i++){
-        for(let j=0;j<arr[i].length;j++){
-          if(arr[i].charAt(j)===arr[i].charAt((arr[i].length-1)-j)){
-                newArr[count]=arr[i];  
-          }
-        
-        }
-        count++;
-      }
-      return newArr;
-    }
-    
-    let arry=["a", "kayak", "racecar"];
-    console.log(filterPalindromes(arry));
-
+  const newArr=[];
+  let ArLn=arr.length;
+  let count=0;
+  for(let i=0;i<ArLn;i++){
+  for(let j=0;j<arr[i].length;j++){
+  if(arr[i].charAt(j)!==arr[i].charAt((arr[i].length-1)-1)){
+        break;
+  }
+  
+  }
+  newArr[count]=arr[i]; 
+  count++;
+  }
+  return newArr;
+  }
+  
+  let arry=["a", "kayak", "racecar"];
+  console.log(filterPalindromes(arry));
+// /**
+//  * 
+//  * @param {array} arr;
+//  * @return {array}; 
+//  */
+// function filterPalindromes(arr){
+//   const newArr=[];
+//   let ArLn=arr.length;
+//   for(let i=0;i<ArLn;i++){
+//  if(isPalendrom(arr[i]))
+//   newArr.push(arr[i]);
+// }
+// return newArr;
+// }
+// let arry=["not", "a", "kayak", "eagle", "racecar"];
+// console.log(filterPalindromes(arry));
+// /**
+//  * 
+//  * @param {string} strg ;
+//  * @return {boolean};
+//  */
+// function isPalendrom(strg){
+  
+//   for(let i=0;i<strg.length;i++){
+//     if(strg.charAt(i)!==strg.charAt((strg.length-1)-i)){
+//           return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPalendrom("maamq"));
 /**
  * 
  * @param {number} matr1 takes matrix as parameter; 
@@ -271,4 +305,4 @@ function filterPalindromes(arr){
     [3,4,5]];
     console.table(matrixAddition(matr1,matr2));
     
-module.exports= {isArrayEqual, addends,getMiddle,rotateLeft,rotateRight,rotateNRight,isBalance,filterNegativeNum,sortedTwoArrayIn2One,reverse2String,matrixAddition};
+module.exports= {isArrayEqual, addends,getMiddle,rotateLeft,rotateRight,rotateNRight,isBalance,enhancedIncludes,filterNegativeNum,sortedTwoArrayIn2One,reverse2String,matrixAddition,filterPalindromes};

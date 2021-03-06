@@ -126,5 +126,14 @@ describe("Matrix", function () {
     });
 });
 
+describe("isBalance", function () {
+    it("test with equal array", function () {
+        assert.strictEqual(arrays.isBalance(["(", ")", "[", "{", "}", "]"]), true);
+    });
 
+    it("test with arrays that are not equal", function () {
+        assert.strictEqual(arrays.isBalance(["(", ")", "[", "{", "}", "]","]"]), false);
+    });
+
+});
 
