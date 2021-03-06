@@ -31,7 +31,7 @@ function addends(arr){
 }
 /**
  * 
- * @param {number} array the fuction takes number array;
+ * @param {array} array the fuction takes number array;
  * @return {number} returns the middle value depnding the array is even or odd length;
  */
 function getMiddle(array){
@@ -80,6 +80,33 @@ function rotateNRight(arr,numbMoves){
     }
 /**
  * 
+ * @param {array} arr1;
+ * @return {boolean}; 
+ */
+function isBalance(arr1){
+      let stack=[];
+      let len=stack.length-1;
+     if(arr1.length%2!==0)return false;
+  for(let i=0;i<arr1.length;i++){
+          if(arr1[i]==="{"||arr1[i]==="["||arr1[i]==="("){
+              stack.push(arr1[i]);
+          }else if(stack [len]==="{"&&arr1[i]==="}"){
+              stack.pop();
+          }else if(stack [len]==="["&&arr1[i]==="]"){
+              stack.pop();
+          }else if(stack [len]==="("&&arr1[i]===")"){
+              stack.pop();
+          }
+      }
+      if(stack.length===0){
+          return true;
+      }
+      return false;
+  }
+  let exp = [")","(", ")", "[", "{", "}", "]"]; 
+  console.log(isBalance(exp));   
+/**
+ * 
  * @param {string} strgNumber input is any string number sparated by comma;
  * @return {number} function return the number array that is converted from the string; 
  */
@@ -112,9 +139,9 @@ function filterNegativeNum(arr){
  //     console.log(filterNegativeNum([ 12, 34, -34, 5, -7, 9 ]));  
 /**
  * 
- * @param {number} arrayOne; 
- * @param {number} arrayTwo;
- * @return {number};
+ * @param {array} arrayOne; 
+ * @param {array} arrayTwo;
+ * @return {array};
  */
 function sortedTwoArrayIn2One(arrayOne,arrayTwo){
     let newLength=arrayOne.length+arrayTwo.length;
@@ -140,29 +167,39 @@ function sortedTwoArrayIn2One(arrayOne,arrayTwo){
   console.log(sortedTwoArrayIn2One(arr,ar2));
  /**
   * 
-  * @param {string} arr;
-  * @return {string}; 
+  * @param {string} arr input array string ;
+  * @return {string} return the reverse array string; 
   */
  function reverse2String(arr){
-     let reversedArray=[];
-     for(let i=arr.length-1;i>=0;i--){
-        reversedArray+=arr[i];   
-     }
-     return reversedArray;
- }
- /**
-  * 
-  * @param {string} reverse2String;
-  * @return {string};
-  */
- function reverse2StringF(reverse2String){
-     let result=reverse2String.join("_");
-     return result;
- }
- let arrM=["chimdi","chala","Mesay","Luwam"];
- 
- console.log(reverse2StringF(arrM));
-
+  let reversedArray=[];
+  let len=arr.length;
+  for(let i=0;i<len;i++){
+     reversedArray.push(arr.pop());  
+  }
+  // let result=reversedArray.join("_");
+  return reversedArray.join("_");
+}
+console.log(reverse2String(["chimdi","chala","Mesay","Luwam"]));
+/**
+ * 
+ * @param {array} arr; 
+ * @param {number} val;
+ * @return {array}; 
+ */
+function enhancedIncludes(arr, val){
+  let result=[];
+  let isExsit=true;
+  let count=1
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]==val){
+        result[0]=isExsit;
+        result[count++]=i;
+    }
+  }
+  return result;
+}
+let array=[1, 2, 3, 4, 2]
+console.log(enhancedIncludes(array,2))
 /**
  * 
  * @param {number} arr; 
@@ -207,5 +244,31 @@ function filterPalindromes(arr){
     
     let arry=["a", "kayak", "racecar"];
     console.log(filterPalindromes(arry));
+
+/**
+ * 
+ * @param {number} matr1 takes matrix as parameter; 
+ * @param {number} matr2 takes matrix as parameter;
+ * @returns {matrix} return matrix array; 
+ */
+    function matrixAddition(matr1,matr2){
+ 
+      let newm=[];
+             for(let i=0;i<matr1.length;i++){
+               //let sum=0;
+               for(let j=0;j<matr1[i].length;j++){
+                 //sum+=matr1[i][j]+matr2[i][j];
+               newm.push(matr1[i][j]+matr2[i][j]);
+               }
+               console.log()
+             }
+             return newm;
+    }
+  
+    let matr1=[[0,1,2],
+    [9,8,7]];
+    let matr2=[[6,5,4],
+    [3,4,5]];
+    console.table(matrixAddition(matr1,matr2));
     
-module.exports= {isArrayEqual, addends,getMiddle,rotateLeft,rotateRight,rotateNRight,filterNegativeNum,sortedTwoArrayIn2One,};
+module.exports= {isArrayEqual, addends,getMiddle,rotateLeft,rotateRight,rotateNRight,isBalance,filterNegativeNum,sortedTwoArrayIn2One,reverse2String,matrixAddition};
