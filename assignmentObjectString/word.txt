@@ -1,0 +1,10 @@
+1. How can you make a copy of an object?
+object is not like primitives that when we need to make copy we can copy by referance. 
+This means the two object or more are pointing the same memory location. So the value change 
+in one object also affect the other. Generally, we make copy the object by the copy of referance;
+
+2. How do you remove the white spaces that may be at the beginning and ending of a string
+value?
+by using a method called trim()
+for example let name= "    Hello World    "
+removes space in both dirction and print out just Hello World.
