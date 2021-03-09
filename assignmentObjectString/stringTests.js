@@ -11,7 +11,11 @@ const str = require("./strings.js");  //nothing implemented yet 2/16/2021
 
 2. Write the function countProperties(obj) which returns number of properties of an object.
 
-*/
+ */
+
+
+
+
 
 describe("countProperties", function () {
 
@@ -48,7 +52,7 @@ describe("checkSpam", function () {
 
         const string2 = "there is a prize in the lottery"
 
-        assert.strictEqual(str.checkSpam(string2), false);
+        assert.strictEqual(str.checkSpam(string2), true);
 
     });
 
@@ -65,21 +69,24 @@ and “walking” is “ing”. This function takes two parameters and returns t
 
 describe("suffix", function () {
 
-    it(//write a test case
+    it("contains the same suffix and cut out", function () {
+
+        const string1 = "searching";
+        const string2="leading";
+
+        assert.strictEqual(str.suffix(string1,string2), "ing");
+
+    });
 
 
 
-    );
+//     it(//write another test case
 
 
 
-    it(//write another test case
+//     );
 
-
-
-    );
-
-});
+// });
 
 
 
@@ -95,21 +102,23 @@ describe("titleCase", function () {
 
 
 
-    it(//write a test case
+    it("contains prize and lottery", function () {
+
+        const string1 = "chimdi"
+
+        assert.strictEqual(str.titleCase(string1), "Chimdi");
+
+    });
 
 
 
-    );
+//     it(//write another test case
 
 
 
-    it(//write another test case
+//     );
 
-
-
-    );
-
-});
+// });
 
 
 
@@ -124,3 +133,20 @@ Write a test for test case:  [{name:"abc", age:20},
 expected:  15
 
 */
+describe("getAverageAge", function () {
+
+
+
+    it("get the average of object age", function () {
+
+        let object1={name:"Abc",
+        age:20};
+        let object2={name:"xyz",
+        age:10};
+        let users=[];
+        users[0]=object1;
+        users[1]=object2;
+
+        assert.strictEqual(str.getAverageAge(users),15 );
+
+    });

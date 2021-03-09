@@ -9,7 +9,7 @@ for(let key in car){
     console.log(car[key]);
 
 }
-console.log(car)
+console.log(car);
 car.model="RAV4";
 console.log(car.model);
 delete car.make;
@@ -59,7 +59,7 @@ console.log(checkSpam("the chance to win lottery is high"));
  * @param {string} strg2;
  * @return {string}; 
  */
-function commonSuffix(strg1,strg2){
+function suffix(strg1,strg2){
     let index=0;
     let count=0;
     let ln2= strg2.length-1;
@@ -76,13 +76,13 @@ function commonSuffix(strg1,strg2){
     return result;
 }
 
-console.log(commonSuffix("chikk","learnikk"));
+console.log(suffix("chikk","learnikk"));
 /**
  * 
  * @param {string} sss;
  * @return {string};
  */
-function tittleCase(sss){
+function titleCase(sss){
     let firstChar=sss.slice(0,1);
     let afterFirstChar=sss.slice(1);
     let toUpperFirstChar=firstChar.toUpperCase();
@@ -129,5 +129,4 @@ users[0]=object1;
 users[1]=object2;
 
 console.log(getAverageAge(users));
-function tittleCase(sss){
-module.exports={countProperties,checkSpam,commonSuffix,tittleCase,swap,getAverageAge};
+module.exports={countProperties,checkSpam,commonSuffix: suffix,tittleCase: titleCase,swap,getAverageAge};
