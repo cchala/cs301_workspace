@@ -5,7 +5,7 @@
  * @return {number}; 
  */
 function countDigits(num){
-  
+  num=Math.abs(num);
     if(num===0){
       return 0;
     }else{
@@ -13,7 +13,7 @@ function countDigits(num){
     }
   }
   
-  console.log(countDigits(1234666));
+  console.log(countDigits(-1234666));
 /**
  * 
  * @param {string} strg takes string as input;
